@@ -3,17 +3,11 @@
 @tailwind utilities;
 
 * { box-sizing: border-box; }
-html, body { height: 100%; margin: 0; }
+html, body, #__next { height: 100%; }
 
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 .scrollbar-hide::-webkit-scrollbar { display: none; }
-
 .scrollbar-thin::-webkit-scrollbar { width: 4px; }
 .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
 .scrollbar-thin::-webkit-scrollbar-thumb { background: #374151; border-radius: 2px; }
-
-/* Mobilde textarea otomatik yükseklik için */
-textarea { field-sizing: content; }
-
-/* Smooth transitions */
 * { -webkit-tap-highlight-color: transparent; }

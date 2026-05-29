@@ -4,7 +4,12 @@ import { Toaster } from 'react-hot-toast';
 export const metadata = {
   title: 'RAG Asistan',
   description: 'Belgelerinizle Sohbet Edin - Gemini Flash 1.5',
-  viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({ children }) {

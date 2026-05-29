@@ -1,19 +1,14 @@
 import { NextResponse } from 'next/server';
 
-const PUBLIC_ROUTES = ['/login', '/register'];
+const PUBLIC = ['/login', '/register'];
 
-export function middleware(request) {
-  const { pathname } = request.nextUrl;
-  const token = request.cookies.get('rag_token')?.value;
+export function middleware(req) {
+  const { pathname } = req.nextUrl;
+  const token  = req.cookies.get('rag_token')?.value;
+  const isPublic = PUBLIC.some(p => pathname.startsWith(p));
 
-  const isPublic = PUBLIC_ROUTES.some((r) => pathname.startsWith(r));
-
-  if (!token && !isPublic) {
-    return NextResponse.redirect(new URL('/login', request.url));
-  }
-  if (token && isPublic) {
-    return NextResponse.redirect(new URL('/chat', request.url));
-  }
+  if (!token && !isPublic) return NextResponse.redirect(new URL('/login', req.url));
+  if ( token &&  isPublic) return NextResponse.redirect(new URL('/chat',  req.url));
   return NextResponse.next();
 }
 

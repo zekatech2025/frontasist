@@ -3,6 +3,6 @@
   "outputDirectory": ".next",
   "framework": "nextjs",
   "env": {
-    "BACKEND_URL": "https://YOUR-BACKEND.railway.app"
+    "BACKEND_URL": "zekaasist-production.up.railway.app"
   }
 }
